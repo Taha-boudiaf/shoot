@@ -9,7 +9,7 @@ const theme = createMuiTheme({
       paper: colors.common.white
     },
     primary: {
-      main: colors.grey[200]
+      main: colors.grey[50]
     },
     secondary: {
       main: colors.deepPurple[500]
