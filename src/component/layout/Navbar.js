@@ -1,23 +1,15 @@
 import React from 'react'
-import {
-  makeStyles,
-  AppBar,
-  Toolbar,
-  Typography,
-  Button
-} from '@material-ui/core'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
+import { makeStyles, AppBar, Toolbar, Button } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import Logo from '../icon/Logo'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    width: '100%'
   },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
-  title: {
-    flexGrow: 1
+  toolBar: {
+    display: 'flex',
+    justifyContent: 'space-between'
   }
 }))
 
@@ -25,24 +17,16 @@ const Navbar = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
+    <>
       <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+        <Toolbar className={classes.toolBar}>
+          <Link to="home">
+            <Logo />
+          </Link>
+          <Link to="about">About</Link>
         </Toolbar>
       </AppBar>
-    </div>
+    </>
   )
 }
 
