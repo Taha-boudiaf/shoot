@@ -4,14 +4,17 @@ import typography from './typography'
 const theme = createMuiTheme({
   palette: {
     background: {
-      light: '#eceff1'
+      dark: '#F4F6F8',
+      default: colors.common.white,
+      paper: colors.common.white
     },
     primary: {
-      main: colors.deepPurple[500]
+      main: colors.grey[50]
     },
     secondary: {
-      main: colors.blue[200]
+      main: colors.deepPurple[500]
     },
+
     text: {
       primary: colors.grey[900],
       secondary: colors.grey[400]
