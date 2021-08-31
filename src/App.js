@@ -4,11 +4,12 @@ import { Container, ThemeProvider } from '@material-ui/core'
 import Navbar from './component/layout/Navbar'
 import theme from './theme'
 import { HomePage, AboutPage, NotFoundPage } from './component/pages/AsyncList'
+import ShootState from './context/shoot/ShootState'
 import './App.css'
 
 function App() {
   return (
-    <>
+    <ShootState>
       <ThemeProvider theme={theme}>
         <Router>
           <Navbar />
@@ -23,7 +24,7 @@ function App() {
           </div>
         </Router>
       </ThemeProvider>
-    </>
+    </ShootState>
   )
 }
 
