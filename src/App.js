@@ -1,9 +1,10 @@
-import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Container, ThemeProvider } from '@material-ui/core'
+
 import Navbar from './component/layout/Navbar'
 import theme from './theme'
-import { HomePage } from './component/pages/AsyncList'
+import { HomePage, AboutPage, NotFoundPage } from './component/pages/AsyncList'
+import './App.css'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
             <Container maxWidth="lg">
               <Switch>
                 <Route exact path="/home" component={HomePage} />
+                <Route exact path="/about" component={AboutPage} />
+                <Route component={NotFoundPage} />
               </Switch>
             </Container>
           </div>
