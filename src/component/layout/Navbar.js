@@ -20,7 +20,7 @@ const Navbar = () => {
     <>
       <AppBar position="static">
         <Toolbar className={classes.toolBar}>
-          <Link to="home">
+          <Link to="/">
             <Logo />
           </Link>
           <Link to="about">About</Link>

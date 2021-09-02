@@ -1,11 +1,8 @@
+import Search from '../layout/Search'
 import React from 'react'
 
 const Home = () => {
-  return (
-    <div>
-      <p>from home page</p>
-    </div>
-  )
+  return <>{/* <Search /> */}</>
 }
 
 export default Home
