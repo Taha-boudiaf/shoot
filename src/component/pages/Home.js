@@ -1,10 +1,11 @@
-import Search from '../layout/Search'
 import React from 'react'
-
+import Card from '../photos/Card'
+import Search from '../photos/Search'
 const Home = () => {
   return (
     <>
-      <Search />{' '}
+      <Search />
+      <Card />
     </>
   )
 }

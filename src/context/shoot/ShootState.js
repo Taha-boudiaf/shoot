@@ -18,12 +18,12 @@ const ShootState = (props) => {
 
   const searchPhoto = async (text) => {
     const res = await axios.get(
-      `https://api.unsplash.com/search/photos/?query=${text}&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
+      `https://api.unsplash.com/search/photos/?query=${text}&per_page=10&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )
-    console.log(res.data)
+    console.log(res.data.results)
     dispatch({
       type: Search_PHOTO,
-      payload: res.data
+      payload: res.data.results
     })
   }
 
