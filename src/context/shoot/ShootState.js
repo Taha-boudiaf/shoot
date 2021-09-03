@@ -5,17 +5,6 @@ import shootContext from './shootContext'
 import shootReducer from './shootReducer'
 import { Search_PHOTO } from '../types'
 
-// let shootClientID
-// let shootClientSecret
-
-// if (process.env.NODE_ENV !== 'production') {
-//   shootClientID = process.env.API_ACCESS_KEY
-//   shootClientSecret = process.env.API_SECRET_KEY
-// } else {
-//   shootClientID = process.env.ACCESS_KEY
-//   shootClientSecret = process.env.SECRET_KEY
-// }
-
 const ShootState = (props) => {
   // initial state
   const initialState = {
@@ -27,9 +16,9 @@ const ShootState = (props) => {
 
   const [state, dispatch] = useReducer(shootReducer, initialState)
 
-  const searchPhoto = async () => {
+  const searchPhoto = async (text) => {
     const res = await axios.get(
-      `https://api.unsplash.com/search/photos/?query=london&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
+      `https://api.unsplash.com/search/photos/?query=${text}&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )
     console.log(res.data)
     dispatch({

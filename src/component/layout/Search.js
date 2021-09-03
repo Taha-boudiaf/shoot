@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search'
-import { Paper, Button, makeStyles, TextField } from '@material-ui/core'
+import { Button, makeStyles } from '@material-ui/core'
 
 import ShootContext from '../../context/shoot/shootContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: '700px',
     margin: '30px',
     display: 'flex',
-    justifyContent: 'center',
     height: '45px',
     background: 'rgb(255, 255, 255)',
     boxShadow:
@@ -25,14 +25,25 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Search = () => {
+  // context
   const shootContext = useContext(ShootContext)
+  //   material ui style
   const classes = useStyles()
-  //   const [text, setText] = useState('')
-  //   const handleOnChange = (e) => setText(e.target.value)
-  //   console.log(text)
+  const [text, setText] = useState('')
+  const handleOnChange = (e) => setText(e.target.value)
+  const handleOnSubmit = (e) => {
+    e.preventDefault()
+    if (text === '') {
+      console.log('no search value')
+    } else {
+      shootContext.searchPhoto(text)
+    }
+
+    setText('')
+  }
   return (
-    <>
-      <form component="form" className={classes.root}>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <form component="form" className={classes.root} onSubmit={handleOnSubmit}>
         <Button
           type="submit"
           aria-label="search"
@@ -40,15 +51,14 @@ const Search = () => {
         >
           <SearchIcon />
         </Button>
-
         <input
           type="text"
           placeholder="Search..."
-          //   onChange={handleOnChange}
+          onChange={handleOnChange}
           style={inputStyle}
         />
       </form>
-    </>
+    </div>
   )
 }
 const inputStyle = {
