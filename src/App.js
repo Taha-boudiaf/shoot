@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Container, ThemeProvider } from '@material-ui/core'
-import axios from 'axios'
 
 import Navbar from './component/layout/Navbar'
 import theme from './theme'
@@ -10,20 +9,6 @@ import ShootState from './context/shoot/ShootState'
 import './App.css'
 
 function App() {
-  const searchPhoto = async () => {
-    const res = await axios.get({
-      method: 'PUT',
-      url: 'https://jsonplaceholder.typicode.com/posts/1',
-      data: {
-        id: 1,
-        userId: 1,
-        title: 'A new title',
-        body: 'Update this post'
-      }
-    })
-    console.log(res.data)
-  }
-
   return (
     <ShootState>
       <ThemeProvider theme={theme}>

@@ -2,7 +2,11 @@ import Search from '../layout/Search'
 import React from 'react'
 
 const Home = () => {
-  return <>{/* <Search /> */}</>
+  return (
+    <>
+      <Search />{' '}
+    </>
+  )
 }
 
 export default Home

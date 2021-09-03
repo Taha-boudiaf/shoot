@@ -37,6 +37,7 @@ const ShootState = (props) => {
       payload: res.data
     })
   }
+
   return (
     <shootContext.Provider
       value={{
