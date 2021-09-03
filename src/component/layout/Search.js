@@ -54,6 +54,7 @@ const Search = () => {
 const inputStyle = {
   flex: '1',
   border: '0',
-  borderRadius: '31px'
+  borderRadius: '31px',
+  outline: 'none'
 }
 export default Search
