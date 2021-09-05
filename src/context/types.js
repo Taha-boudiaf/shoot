@@ -1,1 +1,1 @@
-export const Search_PHOTO = 'Search_PHOTO'
+export const SEARCH_PHOTO = 'SEARCH_PHOTO'

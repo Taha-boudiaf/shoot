@@ -15,9 +15,10 @@ const useStyles = makeStyles({
     maxWidth: 345
   }
 })
-const CardList = ({ photo: { alt_descriptionm, urls } }) => {
+const CardList = (props) => {
   const classes = useStyles()
-  console.log('cardlist')
+  const { alt_descriptionm, urls, description, likes } = props.photo
+
   return (
     <div>
       <Card className={classes.root}>
@@ -31,7 +32,7 @@ const CardList = ({ photo: { alt_descriptionm, urls } }) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+              {description}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {alt_descriptionm}
@@ -40,7 +41,7 @@ const CardList = ({ photo: { alt_descriptionm, urls } }) => {
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            Share
+            {likes}
           </Button>
           <Button size="small" color="primary">
             Learn More

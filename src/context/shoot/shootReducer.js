@@ -1,11 +1,11 @@
-import { Search_PHOTO } from '../types'
+import { SEARCH_PHOTO } from '../types'
 
 const shootReducer = (state, action) => {
   switch (action) {
-    case Search_PHOTO:
+    case SEARCH_PHOTO:
       return {
         ...state,
-        photo: action.payload,
+        photos: action.payload,
         loading: false
       }
 

@@ -1,18 +1,19 @@
 import React, { useContext } from 'react'
-import ShootState from '../../context/shoot/shootContext'
+import ShootContext from '../../context/shoot/shootContext'
 import CardList from './CardList'
 import Loading from '../layout/Loading'
 const Card = () => {
-  const shootContext = useContext(ShootState)
+  const shootContext = useContext(ShootContext)
   const loading = false
-  const { photo } = shootContext
+  const { photos } = shootContext
+  console.log(photos)
   if (loading) {
     return <Loading />
   } else {
     return (
       <div>
-        {photo.map((pic) => (
-          <CardList key={pic.id} photo={photo} />
+        {photos.map((photo) => (
+          <CardList key={photo.id} photo={photo} />
         ))}
       </div>
     )
