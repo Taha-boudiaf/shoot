@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import shootContext from './shootContext'
 import ShootReducer from './shootReducer'
-import { SEARCH_PHOTOS } from '../types'
+import { SEARCH_PHOTOS, SET_PHOTOS_LOADING } from '../types'
 
 const ShootState = ({ children }) => {
   // initial state
@@ -15,6 +15,9 @@ const ShootState = ({ children }) => {
   const [state, dispatch] = useReducer(ShootReducer, initialState)
 
   const searchPhoto = async (text) => {
+    dispatch({
+      type: SET_PHOTOS_LOADING
+    })
     const res = await axios.get(
       `https://api.unsplash.com/search/photos/?query=${text}&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )

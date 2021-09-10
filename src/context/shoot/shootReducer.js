@@ -1,4 +1,4 @@
-import { SEARCH_PHOTOS } from '../types'
+import { SEARCH_PHOTOS, SET_PHOTOS_LOADING } from '../types'
 
 const shootReducer = (state, action) => {
   const { type, payload } = action
@@ -9,6 +9,12 @@ const shootReducer = (state, action) => {
         ...state,
         photos: [...payload],
         loading: false
+      }
+    }
+    case SET_PHOTOS_LOADING: {
+      return {
+        ...state,
+        loading: true
       }
     }
     default:
