@@ -1,18 +1,14 @@
 import React from 'react'
-// import notFound from '../../assets/notFound.jpg'
+import notFound from '../../assets/error.jpg'
 const NotFound = () => {
   return (
-    <div style={NotF}>
-      {/* <img src={notFound} alt="NotFound" style={notFoundStyle} /> */}
-      <h1>404 Page Not Found</h1>
+    <div>
+      <img src={notFound} alt="NotFound" style={notFoundStyle} />
     </div>
   )
 }
-// const notFoundStyle = {
-//   width: '100%'
-// }
-const NotF = {
-  display: 'flex',
-  justifyContent: 'center'
+const notFoundStyle = {
+  width: '100%'
 }
+
 export default NotFound

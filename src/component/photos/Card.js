@@ -1,11 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ShootContext from '../../context/shoot/shootContext'
 import CardList from './CardList'
 import Loading from '../layout/Loading'
 const Card = () => {
   const shootContext = useContext(ShootContext)
-  const loading = false
-  const { photos } = shootContext
+
+  const { photos, loading, searchPhoto } = shootContext
+  useEffect(() => {
+    searchPhoto()
+  }, [])
   console.log(photos)
   if (loading) {
     return <Loading />

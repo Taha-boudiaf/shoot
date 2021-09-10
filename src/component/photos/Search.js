@@ -53,6 +53,7 @@ const Search = () => {
         </Button>
         <input
           type="text"
+          value={text}
           placeholder="Search..."
           onChange={handleOnChange}
           style={inputStyle}
