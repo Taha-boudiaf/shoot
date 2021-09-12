@@ -12,11 +12,11 @@ body {
 .gallery:hover .gallery__image {
   filter: grayscale(1);
 }
-.gallery__column {
+/* .gallery__column {
   display: flex;
   flex-direction: column;
   width: 25%;
-}
+} */
 .gallery__link {
   margin: 2px;
   overflow: hidden;

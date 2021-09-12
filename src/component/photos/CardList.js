@@ -1,13 +1,7 @@
 import React from 'react'
 import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
+  Grid,
   makeStyles,
-  Typography
 } from '@material-ui/core'
 
 const useStyles = makeStyles({
@@ -20,35 +14,18 @@ const CardList = (props) => {
   const { alt_descriptionm, urls, description, likes } = props.photo
 
   return (
-    <div>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            alt="Contemplative Reptile"
-            height="140"
-            image={urls.full}
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {description}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {alt_descriptionm}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            {likes}
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
+    
+    <div className='gallery' >
+      <Grid md={3} item={true} >
+        <a href="https://unsplash.com/@jeka_fe" target="_blank" className="gallery__link">
+          <figure className="gallery__thumb">
+            <img src={urls.regular} alt="Portrait by Jessica Felicio" className="gallery__image"/>
+            <figcaption className="gallery__caption">{description}</figcaption>
+          </figure>
+		    </a>
+        </Grid>
     </div>
+  
   )
 }
 
