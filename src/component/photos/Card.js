@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import ShootContext from '../../context/shoot/shootContext'
 import CardList from './CardList'
 import Loading from '../layout/Loading'
-import { GridList } from '@material-ui/core'
+import { GridList, ImageList } from '@material-ui/core'
 
 const Card = () => {
   const shootContext = useContext(ShootContext)
@@ -20,11 +20,11 @@ const Card = () => {
   }
   return (
     <div style={{ scrollBehavior: 'smooth' }}>
-      <GridList cellHeight={260} cols={4}>
+      <ImageList rowHeight={260} cols={4}>
         {photos.map((photo) => (
           <CardList key={photo.id} photo={photo} />
         ))}
-      </GridList>
+      </ImageList>
     </div>
   )
 }

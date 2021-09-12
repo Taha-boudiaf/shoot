@@ -1,5 +1,5 @@
 import React from 'react'
-import { GridListTile, makeStyles } from '@material-ui/core'
+import { GridListTile, ImageListItem, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
@@ -11,9 +11,9 @@ const CardList = (props) => {
   const classes = useStyles()
   const { user, alt_description, urls, description, likes, width } = props.photo
   return (
-    <GridListTile>
+    <ImageListItem>
       <img src={urls.small} alt={alt_description} className={classes.root} />
-    </GridListTile>
+    </ImageListItem>
   )
 }
 
