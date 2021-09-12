@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
 .gallery {
@@ -12,11 +13,6 @@ body {
 .gallery:hover .gallery__image {
   filter: grayscale(1);
 }
-/* .gallery__column {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-} */
 .gallery__link {
   margin: 2px;
   overflow: hidden;
@@ -42,7 +38,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 25px 15px 15px;
+  padding: 25px 9px 15px;
   width: 100%;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
