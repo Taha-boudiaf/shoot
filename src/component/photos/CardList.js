@@ -1,5 +1,5 @@
 import React from 'react'
-import { GridListTile, ImageListItem, makeStyles } from '@material-ui/core'
+import { ImageListItem, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {

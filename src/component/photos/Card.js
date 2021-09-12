@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react'
+import { ImageList } from '@material-ui/core'
+
 import ShootContext from '../../context/shoot/shootContext'
 import CardList from './CardList'
 import Loading from '../layout/Loading'
-import { GridList, ImageList } from '@material-ui/core'
 
 const Card = () => {
   const shootContext = useContext(ShootContext)
@@ -11,7 +12,7 @@ const Card = () => {
   useEffect(() => {
     searchPhoto()
   }, [])
-  console.log(photos)
+
   if (loading) {
     return <Loading />
   }

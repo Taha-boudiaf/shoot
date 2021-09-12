@@ -21,14 +21,13 @@ const ShootState = ({ children }) => {
     const res = await axios.get(
       `https://api.unsplash.com/search/photos/?query=${text}&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )
-    console.log(text)
+
     dispatch({
       type: SEARCH_PHOTOS,
       payload: res.data.results
     })
   }
 
-  console.log(state)
   return (
     <shootContext.Provider
       value={{
