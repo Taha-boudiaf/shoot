@@ -12,7 +12,7 @@ const CardList = (props) => {
   const { user, alt_description, urls, description, likes, width } = props.photo
   return (
     <ImageListItem>
-      <img src={urls.small} alt={alt_description} className={classes.root} />
+      <img src={urls.thumb} alt={alt_description} className={classes.root} />
     </ImageListItem>
   )
 }
