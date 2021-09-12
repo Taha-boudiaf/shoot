@@ -18,7 +18,7 @@ const Card = () => {
     return <div> there are no photos</div>
   }
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={2}>
       {photos.map((photo) => (
         <CardList key={photo.id} photo={photo} />
       ))}
