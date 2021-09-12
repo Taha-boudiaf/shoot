@@ -14,8 +14,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Navbar />
-          <Container maxWidth="lg" bgcolor="primary.main">
-            <div className="App">
+          <Container bgcolor="primary.main">
+            <div
+              className="App"
+              style={{ minHeight: '60vh', scrollBehavior: 'smooth' }}
+            >
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/about" component={AboutPage} />
