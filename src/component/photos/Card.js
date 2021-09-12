@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import ShootContext from '../../context/shoot/shootContext'
 import CardList from './CardList'
 import Loading from '../layout/Loading'
-import { Grid } from '@material-ui/core'
+import { Grid, GridList } from '@material-ui/core'
+
 const Card = () => {
   const shootContext = useContext(ShootContext)
   const { photos, loading, searchPhoto } = shootContext
@@ -18,11 +19,13 @@ const Card = () => {
     return <div> there are no photos</div>
   }
   return (
-    <Grid container spacing={2}>
-      {photos.map((photo) => (
-        <CardList key={photo.id} photo={photo} />
-      ))}
-    </Grid>
+    <div>
+      <GridList cellHeight={260} cols={4}>
+        {photos.map((photo) => (
+          <CardList key={photo.id} photo={photo} />
+        ))}
+      </GridList>
+    </div>
   )
 }
 
