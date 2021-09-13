@@ -7,11 +7,13 @@ const useStyles = makeStyles({
     margin: '5px'
   }
 })
-const CardList = (props) => {
+const CardList = ({
+  photo: { user, alt_description, urls, description, likes, width }
+}) => {
   const classes = useStyles()
-  const { user, alt_description, urls, description, likes, width } = props.photo
+
   return (
-    <ImageListItem>
+    <ImageListItem className={classes.list}>
       <img src={urls.thumb} alt={alt_description} className={classes.root} />
     </ImageListItem>
   )
