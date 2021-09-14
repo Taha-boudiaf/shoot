@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../photos/Card'
 import Search from '../photos/Search'
 
 const Home = () => {
+  const [keyWord, setKeyWord] = useState('')
   return (
     <>
-      <Search />
+      <Search keyWord={keyWord} />
       <Card />
     </>
   )

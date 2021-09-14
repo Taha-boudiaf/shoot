@@ -16,11 +16,12 @@ const Card = () => {
   const classes = useStyles()
   // use context api
   const shootContext = useContext(ShootContext)
-  const { photos, loading, searchPhoto } = shootContext
+  const { photos, loading, searchPhoto, globalPhotos } = shootContext
 
-  // random photos
+  // random photos & search for photos
   useEffect(() => {
     searchPhoto()
+    globalPhotos()
   }, [])
   // loading after show phaotos
   if (loading) {

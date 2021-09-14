@@ -27,16 +27,19 @@ const useStyles = makeStyles((theme) => ({
 const Search = () => {
   // context
   const shootContext = useContext(ShootContext)
+  const { searchPhoto } = shootContext
   //   material ui style
   const classes = useStyles()
   const [text, setText] = useState('')
+  // function to add data value in text
   const handleOnChange = (e) => setText(e.target.value)
+  // function to submit value
   const handleOnSubmit = (e) => {
     e.preventDefault()
     if (text === '') {
       console.log('no search value')
     } else {
-      shootContext.searchPhoto(text)
+      searchPhoto(text)
     }
 
     setText('')
