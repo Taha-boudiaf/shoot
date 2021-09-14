@@ -4,6 +4,7 @@ import Loading from '../layout/Loading'
 const Home = lazy(() => import('./Home'))
 const About = lazy(() => import('./About'))
 const NotFound = lazy(() => import('./NotFound'))
+const Footer = lazy(() => import('./Footer'))
 
 export const HomePage = () => (
   <Suspense fallback={<Loading />}>
@@ -20,5 +21,11 @@ export const AboutPage = () => (
 export const NotFoundPage = () => (
   <Suspense fallback={<Loading />}>
     <NotFound />
+  </Suspense>
+)
+
+export const FooterPage = () => (
+  <Suspense fallback={<Loading />}>
+    <Footer />
   </Suspense>
 )

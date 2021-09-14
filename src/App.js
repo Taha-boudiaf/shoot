@@ -3,7 +3,12 @@ import { Container, ThemeProvider } from '@material-ui/core'
 
 import Navbar from './component/layout/Navbar'
 import theme from './theme'
-import { HomePage, AboutPage, NotFoundPage } from './component/pages/AsyncList'
+import {
+  HomePage,
+  AboutPage,
+  NotFoundPage,
+  FooterPage
+} from './component/pages/AsyncList'
 import ShootState from './context/shoot/ShootState'
 
 import './App.css'
@@ -26,6 +31,7 @@ function App() {
               </Switch>
             </div>
           </Container>
+          <FooterPage />
         </Router>
       </ThemeProvider>
     </ShootState>

@@ -4,7 +4,8 @@ import { ImageListItem, makeStyles } from '@material-ui/core'
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    margin: '5px'
+    margin: '5px',
+    height: '100'
   }
 })
 const CardList = ({
