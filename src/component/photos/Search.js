@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search'
 import { Button, makeStyles } from '@material-ui/core'
+import PropTypes from 'prop-types'
 
 import ShootContext from '../../context/shoot/shootContext'
 
@@ -72,4 +73,8 @@ const inputStyle = {
   borderRadius: '31px',
   outline: 'none'
 }
+Search.propTypes = {
+  valuekeyWord: PropTypes.func.isRequired
+}
+
 export default Search

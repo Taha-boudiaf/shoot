@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ImageList, makeStyles } from '@material-ui/core'
+import PropTypes from 'prop-types'
 
 import ShootContext from '../../context/shoot/shootContext'
 import CardList from './CardList'
@@ -48,5 +49,7 @@ const Card = ({ keyWord }) => {
     </div>
   )
 }
-
+Card.prototype = {
+  keyWord: PropTypes.string.isRequired
+}
 export default Card

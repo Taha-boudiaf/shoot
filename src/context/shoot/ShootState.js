@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer } from 'react'
 import axios from 'axios'
 
 import shootContext from './shootContext'
