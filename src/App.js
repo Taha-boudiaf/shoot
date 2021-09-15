@@ -22,7 +22,7 @@ function App() {
           <Container bgcolor="primary.main">
             <div
               className="App"
-              style={{ minHeight: '60vh', scrollBehavior: 'smooth' }}
+              style={{ minHeight: '70vh', scrollBehavior: 'smooth' }}
             >
               <Switch>
                 <Route exact path="/" component={HomePage} />
