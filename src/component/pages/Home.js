@@ -3,11 +3,15 @@ import Card from '../photos/Card'
 import Search from '../photos/Search'
 
 const Home = () => {
-  const [keyWord, setKeyWord] = useState('')
+  const [keyWord, setkeyWord] = useState('')
+  const valuekeyWord = (text) => {
+    setkeyWord(text)
+  }
+  console.log(keyWord)
   return (
     <>
-      <Search keyWord={keyWord} />
-      <Card />
+      <Search valuekeyWord={valuekeyWord} />
+      <Card keyWord={keyWord} />
     </>
   )
 }

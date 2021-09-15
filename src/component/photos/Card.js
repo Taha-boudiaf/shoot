@@ -12,16 +12,18 @@ const useStyles = makeStyles({
   }
 })
 
-const Card = () => {
+const Card = ({ keyWord }) => {
   const classes = useStyles()
   // use context api
   const shootContext = useContext(ShootContext)
   const { photos, loading, searchPhoto, globalPhotos } = shootContext
-
   // random photos & search for photos
   useEffect(() => {
-    searchPhoto()
-    globalPhotos()
+    if (keyWord !== '') {
+      searchPhoto()
+    } else {
+      globalPhotos()
+    }
   }, [])
   // loading after show phaotos
   if (loading) {

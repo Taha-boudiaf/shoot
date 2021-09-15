@@ -20,7 +20,7 @@ const ShootState = ({ children }) => {
       type: SET_PHOTOS_LOADING
     })
     const res = await axios.get(
-      `https://api.unsplash.com/search/photos/?query=${text}&per_page=24&page=1&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
+      `https://api.unsplash.com/search/photos/?query=${text}&per_page=30&page=1&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )
 
     dispatch({
@@ -30,11 +30,16 @@ const ShootState = ({ children }) => {
   }
   // global photos
   const globalPhotos = async () => {
+    dispatch({
+      type: SET_PHOTOS_LOADING
+    })
     const res = await axios.get(
       `https://api.unsplash.com/photos/?per_page=30&page=1&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )
-    console.log(res.data)
-    return res
+    dispatch({
+      type: SEARCH_PHOTOS,
+      payload: res.data
+    })
   }
   return (
     <shootContext.Provider
