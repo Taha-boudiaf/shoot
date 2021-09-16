@@ -46,9 +46,9 @@ const DialogActions = withStyles((theme) => ({
   }
 }))(MuiDialogActions)
 
-const Modal = () => {
+const Modal = ({ handleModal, open }) => {
   const handleClose = () => {
-    setOpen(false)
+    handleModal(false)
   }
   return (
     <>

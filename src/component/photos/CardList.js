@@ -14,12 +14,15 @@ const CardList = ({ photo: { alt_description, urls } }) => {
   const handleClickOpen = () => {
     setOpen(true)
   }
+  const handleModal = () => {
+    setOpen(false)
+  }
   return (
     <>
       <ImageListItem className={classes.list} onClick={handleClickOpen}>
         <img src={urls.thumb} alt={alt_description} className={classes.root} />
       </ImageListItem>
-      <Modal />
+      <Modal handleModal={handleModal} open={open} />
     </>
   )
 }
