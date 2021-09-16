@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { ImageListItem, makeStyles } from '@material-ui/core'
+import PropTypes from 'prop-types'
 import Modal from './modal/Modal'
+
 const useStyles = makeStyles({
   root: {
     width: '100%',
@@ -27,5 +29,7 @@ const CardList = ({ photo }) => {
     </>
   )
 }
-
+CardList.prototype = {
+  photo: PropTypes.array.isRequired
+}
 export default CardList

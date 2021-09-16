@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
@@ -8,6 +7,7 @@ import MuiDialogActions from '@material-ui/core/DialogActions'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 import Typography from '@material-ui/core/Typography'
+import PropTypes from 'prop-types'
 
 const styles = (theme) => ({
   root: {
@@ -47,7 +47,8 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 const Modal = ({ handleModal, open, photo }) => {
-  const { urls } = photo
+  const { urls, user } = photo
+  console.log(photo)
   const handleClose = () => {
     handleModal(false)
   }
@@ -59,7 +60,9 @@ const Modal = ({ handleModal, open, photo }) => {
         open={open}
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+          Photo by {user.first_name}
+          {''}
+          {user.last_name}
         </DialogTitle>
         <img style={styleModel} src={urls.regular} />
         <DialogActions>
@@ -75,5 +78,10 @@ const styleModel = {
   width: '100%',
   objectFit: 'cover',
   overflow: 'auto'
+}
+Modal.prototype = {
+  handleModal: PropTypes.func.isRequired,
+  photo: PropTypes.array.isRequired,
+  open: PropTypes.bool.isRequired
 }
 export default Modal
