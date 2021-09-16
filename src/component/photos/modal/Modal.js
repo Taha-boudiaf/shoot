@@ -46,7 +46,8 @@ const DialogActions = withStyles((theme) => ({
   }
 }))(MuiDialogActions)
 
-const Modal = ({ handleModal, open }) => {
+const Modal = ({ handleModal, open, photo }) => {
+  const { urls } = photo
   const handleClose = () => {
     handleModal(false)
   }
@@ -60,10 +61,7 @@ const Modal = ({ handleModal, open }) => {
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Modal title
         </DialogTitle>
-        <img
-          style={styleModel}
-          src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg"
-        />
+        <img style={styleModel} src={urls.regular} />
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">
             Save changes

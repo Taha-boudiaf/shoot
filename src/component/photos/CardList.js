@@ -8,9 +8,10 @@ const useStyles = makeStyles({
     height: '100'
   }
 })
-const CardList = ({ photo: { alt_description, urls } }) => {
+const CardList = ({ photo }) => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
+  const { alt_description, urls } = photo
   const handleClickOpen = () => {
     setOpen(true)
   }
@@ -22,7 +23,7 @@ const CardList = ({ photo: { alt_description, urls } }) => {
       <ImageListItem className={classes.list} onClick={handleClickOpen}>
         <img src={urls.thumb} alt={alt_description} className={classes.root} />
       </ImageListItem>
-      <Modal handleModal={handleModal} open={open} />
+      <Modal handleModal={handleModal} open={open} photo={photo} />
     </>
   )
 }
