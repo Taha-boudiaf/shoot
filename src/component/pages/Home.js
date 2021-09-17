@@ -10,24 +10,24 @@ const Home = () => {
   }
   const next = () => {
     let num = page
-    if (num >= 1) {
-      num += 1
-      setPage(num)
-    }
+    num += 1
+    setPage(num)
   }
+
   const last = () => {
     let num = page
-    if ((num = 1)) {
-      setPage = 1
-    } else {
+    if (num > 1) {
       num -= 1
       setPage(num)
+    } else {
+      num = 1
+      setPage(1)
     }
   }
   return (
     <>
       <Search valuekeyWord={valuekeyWord} page={page} />
-      <Card keyWord={keyWord} page={page} />
+      <Card keyWord={keyWord} page={page} next={next} last={last} />
     </>
   )
 }

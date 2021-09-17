@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ImageList, makeStyles } from '@material-ui/core'
+import { Button, ImageList, makeStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
 import ShootContext from '../../context/shoot/shootContext'
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   }
 })
 
-const Card = ({ keyWord, page }) => {
+const Card = ({ keyWord, page, next, last }) => {
   const classes = useStyles()
   // use context api
   const shootContext = useContext(ShootContext)
@@ -25,7 +25,7 @@ const Card = ({ keyWord, page }) => {
     } else {
       globalPhotos(page)
     }
-  }, [])
+  }, [page])
   // loading after show phaotos
   if (loading) {
     return <Loading />
@@ -46,6 +46,8 @@ const Card = ({ keyWord, page }) => {
           <CardList key={photo.id} photo={photo} />
         ))}
       </ImageList>
+      <Button onClick={last}>left</Button>
+      <Button onClick={next}>right</Button>
     </div>
   )
 }
