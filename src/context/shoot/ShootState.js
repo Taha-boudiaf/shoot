@@ -15,12 +15,12 @@ const ShootState = ({ children }) => {
   const [state, dispatch] = useReducer(ShootReducer, initialState)
 
   // search photos
-  const searchPhoto = async (text) => {
+  const searchPhoto = async (text, page) => {
     dispatch({
       type: SET_PHOTOS_LOADING
     })
     const res = await axios.get(
-      `https://api.unsplash.com/search/photos/?query=${text}&per_page=30&page=1&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
+      `https://api.unsplash.com/search/photos/?query=${text}&per_page=30&page=${page}&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )
 
     dispatch({
@@ -29,12 +29,12 @@ const ShootState = ({ children }) => {
     })
   }
   // global photos
-  const globalPhotos = async () => {
+  const globalPhotos = async (page) => {
     dispatch({
       type: SET_PHOTOS_LOADING
     })
     const res = await axios.get(
-      `https://api.unsplash.com/photos/?per_page=30&page=1&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
+      `https://api.unsplash.com/photos/?per_page=30&page=${page}&client_id=WkSlCfsYvCgph6jM9o6IneHxFp_wSzRICASHVT4-L-0`
     )
     dispatch({
       type: SEARCH_PHOTOS,

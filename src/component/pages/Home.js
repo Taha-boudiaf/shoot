@@ -4,14 +4,30 @@ import Search from '../photos/Search'
 
 const Home = () => {
   const [keyWord, setkeyWord] = useState('')
-  const valuekeyWord = (text) => {
-    setkeyWord(text)
+  const [page, setPage] = useState(1)
+  const valuekeyWord = (text, page) => {
+    setkeyWord(text, page)
   }
-  console.log(keyWord)
+  const next = () => {
+    let num = page
+    if (num >= 1) {
+      num += 1
+      setPage(num)
+    }
+  }
+  const last = () => {
+    let num = page
+    if ((num = 1)) {
+      setPage = 1
+    } else {
+      num -= 1
+      setPage(num)
+    }
+  }
   return (
     <>
-      <Search valuekeyWord={valuekeyWord} />
-      <Card keyWord={keyWord} />
+      <Search valuekeyWord={valuekeyWord} page={page} />
+      <Card keyWord={keyWord} page={page} />
     </>
   )
 }

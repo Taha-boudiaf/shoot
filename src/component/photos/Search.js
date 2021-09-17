@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Search = ({ valuekeyWord }) => {
+const Search = ({ valuekeyWord, page }) => {
   // context
   const shootContext = useContext(ShootContext)
   const { searchPhoto } = shootContext
@@ -40,8 +40,8 @@ const Search = ({ valuekeyWord }) => {
     if (text === '') {
       console.log('no search value')
     } else {
-      searchPhoto(text)
-      valuekeyWord(text)
+      searchPhoto(text, page)
+      valuekeyWord(text, page)
     }
 
     setText('')
