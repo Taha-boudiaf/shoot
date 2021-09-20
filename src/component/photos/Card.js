@@ -41,7 +41,7 @@ const Card = ({ keyWord, page, next, last }) => {
   // map photos
   return (
     <div style={{ scrollBehavior: 'smooth' }}>
-      <ImageList rowHeight={260} cols={4} className={classes.list}>
+      <ImageList rowHeight={260} cols={3} className={classes.list}>
         {photos.map((photo) => (
           <CardList key={photo.id} photo={photo} />
         ))}

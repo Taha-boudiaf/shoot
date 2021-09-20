@@ -59,17 +59,12 @@ const Modal = ({ handleModal, open, photo }) => {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
+        <img style={styleModel} src={urls.regular} />
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Photo by {user.first_name}
           {''}
           {user.last_name}
         </DialogTitle>
-        <img style={styleModel} src={urls.regular} />
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
-          </Button>
-        </DialogActions>
       </Dialog>
     </>
   )
