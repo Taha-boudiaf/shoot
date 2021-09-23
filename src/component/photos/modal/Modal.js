@@ -1,13 +1,14 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
+
 import Dialog from '@material-ui/core/Dialog'
 import MuiDialogTitle from '@material-ui/core/DialogTitle'
-import MuiDialogActions from '@material-ui/core/DialogActions'
+import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined'
+
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
-import Typography from '@material-ui/core/Typography'
 import PropTypes from 'prop-types'
+import { Button } from '@material-ui/core'
 
 const styles = (theme) => ({
   root: {
@@ -25,7 +26,6 @@ const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
       {onClose ? (
         <IconButton
           aria-label="close"
@@ -39,16 +39,9 @@ const DialogTitle = withStyles(styles)((props) => {
   )
 })
 
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1)
-  }
-}))(MuiDialogActions)
-
 const Modal = ({ handleModal, open, photo }) => {
-  const { urls, user } = photo
-  console.log(photo)
+  const { urls, user, description, likes, alt_description } = photo
+
   const handleClose = () => {
     handleModal(false)
   }
@@ -59,12 +52,40 @@ const Modal = ({ handleModal, open, photo }) => {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <img style={styleModel} src={urls.regular} />
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Photo by {user.first_name}
-          {''}
-          {user.last_name}
-        </DialogTitle>
+        <img
+          style={styleModel}
+          src={urls.regular}
+          onClick={handleClose}
+          alt={alt_description}
+        />
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginRight: '10px'
+          }}
+        >
+          <h5 style={{ marginLeft: '10px' }}>
+            Photo by {user.first_name}
+            {user.last_name}
+          </h5>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span
+              style={{
+                marginRight: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: '18px',
+                fontWeight: '600'
+              }}
+            >
+              {likes}
+            </span>
+            <ThumbUpAltOutlinedIcon />{' '}
+          </div>
+        </div>
       </Dialog>
     </>
   )

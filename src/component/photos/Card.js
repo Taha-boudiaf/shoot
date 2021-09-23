@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button, ImageList, makeStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
@@ -46,8 +46,10 @@ const Card = ({ keyWord, page, next, last }) => {
           <CardList key={photo.id} photo={photo} />
         ))}
       </ImageList>
-      <Button onClick={last}>left</Button>
-      <Button onClick={next}>right</Button>
+      <div className="btn">
+        <Button onClick={last}>previous</Button>
+        <Button onClick={next}>Next</Button>
+      </div>
     </div>
   )
 }
