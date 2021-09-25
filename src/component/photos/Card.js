@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { Button, ImageList, makeStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
+import ArrowBackIosOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined'
+import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined'
 
 import ShootContext from '../../context/shoot/shootContext'
 import CardList from './CardList'
@@ -10,6 +12,10 @@ const useStyles = makeStyles({
   list: {
     display: 'flex',
     justifyContent: 'center'
+  },
+  btn: {
+    background: '#eceff1',
+    padding: '10px 15px'
   }
 })
 
@@ -47,13 +53,19 @@ const Card = ({ keyWord, page, next, last }) => {
         ))}
       </ImageList>
       <div className="btn">
-        <Button onClick={last}>previous</Button>
-        <Button onClick={next}>Next</Button>
+        <Button onClick={last} variant="contained" className={classes.btn}>
+          <ArrowBackIosOutlinedIcon style={{ opacity: 0.8 }} />
+        </Button>
+        <Button onClick={next} variant="contained" className={classes.btn}>
+          <ArrowForwardIosOutlinedIcon style={{ opacity: 0.8 }} />
+        </Button>
       </div>
     </div>
   )
 }
+
 Card.prototype = {
   keyWord: PropTypes.string.isRequired
 }
+
 export default Card
