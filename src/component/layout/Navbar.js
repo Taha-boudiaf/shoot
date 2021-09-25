@@ -45,7 +45,7 @@ const Navbar = (props) => {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-      <Toolbar />
+      <Toolbar id="back-to-top-anchor" />
     </>
   )
 }

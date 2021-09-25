@@ -10,6 +10,7 @@ import {
   FooterPage
 } from './component/pages/AsyncList'
 import ShootState from './context/shoot/ShootState'
+import ScrollToTop from './component/layout/ScrollToTop'
 
 import './App.css'
 
@@ -31,6 +32,7 @@ function App() {
               </Switch>
             </div>
           </Container>
+          <ScrollToTop />
           <FooterPage />
         </Router>
       </ThemeProvider>
