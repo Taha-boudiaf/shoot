@@ -9,10 +9,7 @@ const theme = createTheme({
       paper: colors.common.white
     },
     primary: {
-      main: colors.grey[50]
-    },
-    secondary: {
-      main: colors.deepPurple[500]
+      main: '#f5f5f5'
     },
 
     text: {

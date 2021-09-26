@@ -31,7 +31,7 @@ const Card = ({ keyWord, page, next, last }) => {
     } else {
       globalPhotos(page)
     }
-  }, [page])
+  }, [page, keyWord])
   // loading after show phaotos
   if (loading) {
     return <Loading />

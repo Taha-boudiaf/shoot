@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search'
 import { Button, makeStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
+import { Alert } from '@mui/material'
 
 import ShootContext from '../../context/shoot/shootContext'
 
@@ -38,7 +39,7 @@ const Search = ({ valuekeyWord, page }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault()
     if (text === '') {
-      console.log('no search value')
+      return <Alert severity="warning">sorry ! no search value </Alert>
     } else {
       searchPhoto(text, page)
       valuekeyWord(text, page)
@@ -47,7 +48,14 @@ const Search = ({ valuekeyWord, page }) => {
     setText('')
   }
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '6%',
+        marginBottom: '6%'
+      }}
+    >
       <form component="form" className={classes.root} onSubmit={handleOnSubmit}>
         <Button
           type="submit"
@@ -59,6 +67,7 @@ const Search = ({ valuekeyWord, page }) => {
         <input
           type="text"
           value={text}
+          name="text"
           placeholder="Search..."
           onChange={handleOnChange}
           style={inputStyle}
