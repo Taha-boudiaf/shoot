@@ -4,9 +4,56 @@ body {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
 }
+a {
+  text-decoration: none;
+  margin-right: 20px;
+  color: black;
+}
+
 .btn {
   display: flex;
   justify-content: space-around;
   margin-top: 3%;
   margin-bottom: 3%;
+}
+.row {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip {
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  margin: 0 10px;
+
+  cursor: pointer;
+}
+
+.chip.primary {
+  background: #2f4058;
+  color: whitesmoke;
+}
+
+.chip.secondary {
+  background: #242933;
+  color: #777;
+}
+
+.chip.warning {
+  background: #feb904;
+  color: whitesmoke;
+}
+.chip.danger {
+  background: #da605b;
+  color: whitesmoke;
+}
+
+.chip.info {
+  background: #5fd6d4;
+  color: whitesmoke;
 }

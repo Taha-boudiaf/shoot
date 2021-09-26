@@ -41,7 +41,10 @@ const Navbar = (props) => {
             <Link to="/">
               <Logo />
             </Link>
-            <Link to="about">About</Link>
+            <div>
+              <Link to="/">Home</Link>
+              <Link to="about">About</Link>
+            </div>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
