@@ -31,6 +31,7 @@ const Card = ({ keyWord, page, next, last }) => {
     } else {
       globalPhotos(page)
     }
+    // eslint-disable-next-line
   }, [page, keyWord])
   // loading after show phaotos
   if (loading) {

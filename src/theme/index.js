@@ -1,5 +1,5 @@
 import { createTheme, colors } from '@material-ui/core'
-import typography from './typography'
+import Typography from './typography'
 
 const theme = createTheme({
   palette: {
@@ -17,7 +17,7 @@ const theme = createTheme({
       secondary: colors.grey[400]
     }
   },
-  typography
+  Typography
 })
 
 export default theme
