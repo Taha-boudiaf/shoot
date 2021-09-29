@@ -5,13 +5,7 @@ import shootContext from './shootContext'
 import ShootReducer from './shootReducer'
 import { SEARCH_PHOTOS, SET_PHOTOS_LOADING } from '../types'
 
-let secretCode
-
-if (process.env.NODE_ENV !== 'production') {
-  secretCode = process.env.REACT_APP_CLIENT_SECRET
-} else {
-  secretCode = process.env.CLIENT_SECRET
-}
+let secretCode = process.env.REACT_APP_CLIENT_SECRET
 
 const ShootState = ({ children }) => {
   // initial state
