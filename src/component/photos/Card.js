@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { Button, ImageList, makeStyles } from '@material-ui/core'
+import { Button, makeStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import ArrowBackIosOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined'
@@ -9,9 +9,10 @@ import CardList from './CardList'
 import Loading from '../layout/Loading'
 
 const useStyles = makeStyles({
-  list: {
-    display: 'flex',
-    justifyContent: 'center'
+  container: {
+    width: '100%',
+    display: 'block',
+    margin: '0 auto'
   },
   btn: {
     background: '#eceff1',
@@ -48,11 +49,13 @@ const Card = ({ keyWord, page, next, last }) => {
   // map photos
   return (
     <div style={{ scrollBehavior: 'smooth' }}>
-      <ImageList rowHeight={260} cols={3} className={classes.list}>
-        {photos.map((photo) => (
-          <CardList key={photo.id} photo={photo} />
-        ))}
-      </ImageList>
+      <div className={classes.container}>
+        <div className="masonry">
+          {photos.map((photo) => (
+            <CardList key={photo.id} photo={photo} />
+          ))}
+        </div>
+      </div>
       <div className="btn">
         <Button onClick={last} variant="contained" className={classes.btn}>
           <ArrowBackIosOutlinedIcon style={{ opacity: 0.8 }} />

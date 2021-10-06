@@ -1,9 +1,6 @@
 import React from 'react'
-
 import Dialog from '@material-ui/core/Dialog'
-
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined'
-
 import PropTypes from 'prop-types'
 
 const Modal = ({ handleModal, open, photo }) => {
@@ -41,6 +38,7 @@ const Modal = ({ handleModal, open, photo }) => {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <span
               style={{
+                marginTop: '5px',
                 marginRight: '10px',
                 display: 'flex',
                 alignItems: 'center',

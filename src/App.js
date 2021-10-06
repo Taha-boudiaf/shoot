@@ -21,10 +21,7 @@ function App() {
         <Router>
           <Navbar />
           <Container bgcolor="primary.main">
-            <div
-              className="App"
-              style={{ minHeight: '70vh', scrollBehavior: 'smooth' }}
-            >
+            <div className="App">
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/about" component={AboutPage} />
