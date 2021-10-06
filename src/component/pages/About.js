@@ -5,22 +5,26 @@ import Avatar from '../../assets/avatar.png'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    marginTop: '5%'
+    marginTop: '15%'
   }
 }))
 const About = () => {
   const classes = useStyles()
   return (
-    <Grid className={classes.root}>
-      <Grid item sm={6} xs="auto" md={6} style={{ marginTop: '5%' }}>
+    <Grid container className={classes.root}>
+      <Grid item xs={12} md={6}>
         <img src={Avatar} alt="profile img" width="400" height="400" />
       </Grid>
-      <Grid item sm={6} xs="auto" md={6} style={{ marginTop: '3%' }}>
+      <Grid item xs={12} md={6}>
         <h3>SHOOT</h3>
         <p>
           An application for searching and viewing images built by React and
-          using Unsplash api .
-          <h5>Thank to Unsplash team for offering the API</h5>
+          using Unsplash api .<br />
+          <span
+            style={{ display: 'block', fontSize: '14px', fontWeight: '600' }}
+          >
+            Thank to Unsplash team for offering the API
+          </span>
         </p>
         <h4>Skills:</h4>
         <div className="row">
