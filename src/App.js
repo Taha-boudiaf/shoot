@@ -20,7 +20,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Navbar />
-          <Container bgcolor="primary.main">
+          <Container bgcolor="primary.main" style={{ minHeight: '60vh' }}>
             <div className="App">
               <Switch>
                 <Route exact path="/" component={HomePage} />
