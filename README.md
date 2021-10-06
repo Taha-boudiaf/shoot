@@ -8,7 +8,7 @@
 
 react - material-ui - context api
 
-Live preview: https://6154587db06c2b000747602a--wizardly-jang-1c4646.netlify.app/
+Live preview: https://615dc55b925ea50008eba1be--wizardly-jang-1c4646.netlify.app/
 
 ## Installing dependencies
 
